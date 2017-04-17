@@ -1,0 +1,1809 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/nitoyon/livereloadx#readme"
+
+    >livereloadx (v0.3.9)</a>
+</h1>
+<h4>An implementation of the LiveReload 2 server in Node.js</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx">module livereloadx</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.livereloadx">
+            function <span class="apidocSignatureSpan"></span>livereloadx
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.proxy">
+            function <span class="apidocSignatureSpan">livereloadx.</span>proxy
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.static">
+            function <span class="apidocSignatureSpan">livereloadx.</span>static
+            <span class="apidocSignatureSpan">(config, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.toString">
+            function <span class="apidocSignatureSpan">livereloadx.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.watcher">
+            function <span class="apidocSignatureSpan">livereloadx.</span>watcher
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.websocket">
+            function <span class="apidocSignatureSpan">livereloadx.</span>websocket
+            <span class="apidocSignatureSpan">(config, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>filter</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>html</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>proxy.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>server</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>static.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>watcher.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>websocket.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.config">module livereloadx.config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.config.dump">
+            function <span class="apidocSignatureSpan">livereloadx.config.</span>dump
+            <span class="apidocSignatureSpan">(log, conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.config.parseArgv">
+            function <span class="apidocSignatureSpan">livereloadx.config.</span>parseArgv
+            <span class="apidocSignatureSpan">(argv)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.config.setDefaultValue">
+            function <span class="apidocSignatureSpan">livereloadx.config.</span>setDefaultValue
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.config.validate">
+            function <span class="apidocSignatureSpan">livereloadx.config.</span>validate
+            <span class="apidocSignatureSpan">(conf)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.filter">module livereloadx.filter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.filter.Filter">
+            function <span class="apidocSignatureSpan">livereloadx.filter.</span>Filter
+            <span class="apidocSignatureSpan">(filter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.filter.getMatcher">
+            function <span class="apidocSignatureSpan">livereloadx.filter.</span>getMatcher
+            <span class="apidocSignatureSpan">(filters)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.html">module livereloadx.html</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.html.inject">
+            function <span class="apidocSignatureSpan">livereloadx.html.</span>inject
+            <span class="apidocSignatureSpan">(buffer, port)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.livereloadx">module livereloadx.livereloadx</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.livereloadx.livereloadx">
+            function <span class="apidocSignatureSpan">livereloadx.</span>livereloadx
+            <span class="apidocSignatureSpan">(grunt)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.proxy">module livereloadx.proxy</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.proxy.proxy">
+            function <span class="apidocSignatureSpan">livereloadx.</span>proxy
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.proxy.prototype">module livereloadx.proxy.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.proxy.prototype.doProxy">
+            function <span class="apidocSignatureSpan">livereloadx.proxy.prototype.</span>doProxy
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.proxy.prototype.handle">
+            function <span class="apidocSignatureSpan">livereloadx.proxy.prototype.</span>handle
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.proxy.prototype.init">
+            function <span class="apidocSignatureSpan">livereloadx.proxy.prototype.</span>init
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.proxy.prototype.onError">
+            function <span class="apidocSignatureSpan">livereloadx.proxy.prototype.</span>onError
+            <span class="apidocSignatureSpan">(req, res, err)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.server">module livereloadx.server</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.server.LiveReloadJsHandler">
+            function <span class="apidocSignatureSpan">livereloadx.server.</span>LiveReloadJsHandler
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.server.Server">
+            function <span class="apidocSignatureSpan">livereloadx.server.</span>Server
+            <span class="apidocSignatureSpan">(config, watcher)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.server.createServer">
+            function <span class="apidocSignatureSpan">livereloadx.server.</span>createServer
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.static">module livereloadx.static</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.static.static">
+            function <span class="apidocSignatureSpan">livereloadx.</span>static
+            <span class="apidocSignatureSpan">(config, onError)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.static.super_">
+            function <span class="apidocSignatureSpan">livereloadx.static.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.static.prototype">module livereloadx.static.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.static.prototype.handle">
+            function <span class="apidocSignatureSpan">livereloadx.static.prototype.</span>handle
+            <span class="apidocSignatureSpan">(req, res)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.static.prototype.sendWithInjection">
+            function <span class="apidocSignatureSpan">livereloadx.static.prototype.</span>sendWithInjection
+            <span class="apidocSignatureSpan">(path, stat, stream)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.toString">module livereloadx.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.toString.toString">
+            function <span class="apidocSignatureSpan">livereloadx.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.watcher">module livereloadx.watcher</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.watcher.watcher">
+            function <span class="apidocSignatureSpan">livereloadx.</span>watcher
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.watcher.super_">
+            function <span class="apidocSignatureSpan">livereloadx.watcher.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.watcher.prototype">module livereloadx.watcher.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.watcher.prototype.watch">
+            function <span class="apidocSignatureSpan">livereloadx.watcher.prototype.</span>watch
+            <span class="apidocSignatureSpan">(dir, is_included)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.websocket">module livereloadx.websocket</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.websocket.websocket">
+            function <span class="apidocSignatureSpan">livereloadx.</span>websocket
+            <span class="apidocSignatureSpan">(config, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.websocket.prototype">module livereloadx.websocket.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.websocket.prototype.close">
+            function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>close
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.websocket.prototype.onClose">
+            function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>onClose
+            <span class="apidocSignatureSpan">(socket, remoteAddress)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.websocket.prototype.onConnection">
+            function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>onConnection
+            <span class="apidocSignatureSpan">(socket)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.websocket.prototype.onMessage">
+            function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>onMessage
+            <span class="apidocSignatureSpan">(socket, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.websocket.prototype.send">
+            function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>send
+            <span class="apidocSignatureSpan">(file, msg)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx" id="apidoc.module.livereloadx">module livereloadx</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.livereloadx" id="apidoc.element.livereloadx.livereloadx">
+        function <span class="apidocSignatureSpan"></span>livereloadx
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">livereloadx = function (grunt) {
+
+  grunt.registerTask(&#x27;livereloadx&#x27;, &#x27;LiveReloadX server&#x27;, function() {
+    // initialize log
+    var log_mod = require(&#x27;../lib/log&#x27;)
+      , config_mod = require(&#x27;../lib/config&#x27;);
+    log_mod.cli = true;
+    if (grunt.option(&#x27;debug&#x27;) || grunt.option(&#x27;verbose&#x27;)) {
+      log_mod.verbose = true;
+    }
+
+    // initialize wait
+    var config = grunt.config(this.name);
+    if (&#x27;wait&#x27; in config) {
+      if (config[&#x27;wait&#x27;]) {
+        // never go to next task
+        this.async();
+      }
+      // delete wait property because config_mod report it as invalid
+      delete config[&#x27;wait&#x27;];
+    }
+
+    // get config
+    var log = log_mod(&#x27;grunt&#x27;);
+    try {
+      config = config_mod.setDefaultValue(config);
+      config_mod.dump(log.info.bind(log), config);
+    } catch (e) {
+      grunt.log.error(e);
+      return false;
+    }
+
+    // start server
+    var server = require(&#x27;../&#x27;)(config);
+    server.listen().watch();
+    grunt.log.writeln(&#x27;LiveReloadX started.&#x27;);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.proxy" id="apidoc.element.livereloadx.proxy">
+        function <span class="apidocSignatureSpan">livereloadx.</span>proxy
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ProxyHandler(config) {
+  this.config = config;
+  this.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.static" id="apidoc.element.livereloadx.static">
+        function <span class="apidocSignatureSpan">livereloadx.</span>static
+        <span class="apidocSignatureSpan">(config, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StaticHandler(config, onError) {
+  this.config = config;
+  this.onError = onError;
+  this.root = require(&#x27;path&#x27;).resolve(this.config.dir);
+
+  if (this.config.static) {
+    log.info(&#x22;Enabled static mode.&#x22;);
+  }
+  log.debug(&#x27;root dir: %s&#x27;, this.root);
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.toString" id="apidoc.element.livereloadx.toString">
+        function <span class="apidocSignatureSpan">livereloadx.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  oldBuf.length, newBuf.length);
+return newBuf;
+};
+
+ServerResponseWrapper.prototype.finish = function(buffer) {
+// set Content-Length header
+// `res.setHeader()` is necessary for logging Content-Length in server.js
+this.headers[&#x27;content-length&#x27;] = buffer.length.<span class="apidocCodeKeywordSpan">toString</span>();
+this.res.setHeader(&#x27;Content-Length&#x27;, buffer.length.toString());
+
+log.debug(&#x27;%s: finish&#x27;, this.req.url);
+log.debug(&#x27;  - header: &#x27;, this.headers);
+this.origWriteHead.call(this.res, this.statusCode, this.headers);
+this.origWrite.call(this.res, buffer);
+this.origEnd.call(this.res);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.watcher" id="apidoc.element.livereloadx.watcher">
+        function <span class="apidocSignatureSpan">livereloadx.</span>watcher
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Watcher() {
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.websocket" id="apidoc.element.livereloadx.websocket">
+        function <span class="apidocSignatureSpan">livereloadx.</span>websocket
+        <span class="apidocSignatureSpan">(config, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebSocketHandler(config, options) {
+  this.config = config;
+  this.clients = [];
+
+  this.wsServer = new WebSocketServer(options);
+  this.wsServer.on(&#x27;connection&#x27;, this.onConnection.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.config" id="apidoc.module.livereloadx.config">module livereloadx.config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.config.dump" id="apidoc.element.livereloadx.config.dump">
+        function <span class="apidocSignatureSpan">livereloadx.config.</span>dump
+        <span class="apidocSignatureSpan">(log, conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">dump = function (log, conf) {
+  log(&#x27;Config:&#x27;);
+  log(&#x27;  - mode:   %s&#x27;, conf.static ? &#x27;static&#x27; : conf.proxy !== &#x27;&#x27; ? &#x27;proxy&#x27; : &#x27;default&#x27;);
+  if (conf.proxy) {
+    log(&#x27;    url:  %s&#x27;, conf.proxy);
+    log(&#x27;    prefer local: %s&#x27;, conf.preferLocal ? &#x27;ON&#x27; : &#x27;OFF&#x27;);
+  }
+  log(&#x27;  - port:   %d&#x27;, conf.port);
+  log(&#x27;  - filter:&#x27;);
+  conf.filter.forEach(function(filter, i) {
+    log(&#x27;    %d: %s &#x22;%s&#x22;&#x27;, i + 1, filter.type, filter.pattern);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  delete config[&#x27;wait&#x27;];
+}
+
+// get config
+var log = log_mod(&#x27;grunt&#x27;);
+try {
+  config = config_mod.setDefaultValue(config);
+  config_mod.<span class="apidocCodeKeywordSpan">dump</span>(log.info.bind(log), config);
+} catch (e) {
+  grunt.log.error(e);
+  return false;
+}
+
+// start server
+var server = require(&#x27;../&#x27;)(config);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.config.parseArgv" id="apidoc.element.livereloadx.config.parseArgv">
+        function <span class="apidocSignatureSpan">livereloadx.config.</span>parseArgv
+        <span class="apidocSignatureSpan">(argv)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseArgv = function (argv) {
+  // set default value
+  copyValues(program, defaultValues);
+
+  // HACK: avoid commander.js&#x27;s bug
+  // (https://github.com/visionmedia/commander.js/pull/121)
+  // program.parse() doesn&#x27;t fail when unknown option and args are given.
+  // So we call program.parseOptions() instead of program.parse().
+  program._name = &#x27;livereloadx&#x27;;
+  var parsed = program.parseOptions(program.normalize(argv.slice(2)));
+  program.args = parsed.args;
+
+  // handle unknown options
+  if (parsed.unknown.length &#x3e; 0) {
+    program.parseArgs([], parsed.unknown);
+  }
+
+  // handle &#x3c;dir&#x3e;
+  if (program.args.length === 1) {
+    program.dir = program.args[0];
+  } else if (program.args.length === 0) {
+    program.dir = &#x27;.&#x27;;
+  } else if (program.args.length &#x3e; 1) {
+    throw &#x22;Too much arguments&#x22;;
+  }
+
+  // delete include and exclude
+  delete program.include;
+  delete program.exclude;
+
+  // copy program to Object
+  return validate(copyValues({}, program));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.config.setDefaultValue" id="apidoc.element.livereloadx.config.setDefaultValue">
+        function <span class="apidocSignatureSpan">livereloadx.config.</span>setDefaultValue
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setDefaultValue = function (conf) {
+  for (var key in defaultValues) {
+    if (!(key in conf)) {
+      // deep copy
+      conf[key] = JSON.parse(JSON.stringify(defaultValues[key]));
+    }
+  }
+  return validate(conf);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    res.statusCode,
+    res._headers &#x26;&#x26; res._headers[&#x27;content-length&#x27;] || &#x27;-&#x27;);
+};
+}
+
+
+function Server(config, watcher) {
+this.config = require(&#x27;./config&#x27;).<span class="apidocCodeKeywordSpan">setDefaultValue</span>(config);
+this.is_included = require(&#x27;./filter&#x27;).getMatcher(this.config.filter);
+this.watcher = watcher || new Watcher();
+}
+
+Server.prototype = {
+listen: function() {
+  var self = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.config.validate" id="apidoc.element.livereloadx.config.validate">
+        function <span class="apidocSignatureSpan">livereloadx.config.</span>validate
+        <span class="apidocSignatureSpan">(conf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">validate = function (conf) {
+  for (var key in conf) {
+    if (!(key in defaultValues)) {
+      throw &#x22;Invalid key: &#x22; + key;
+    }
+    if (typeof defaultValues[key] !== typeof conf[key]) {
+      throw &#x22;Invalid type: &#x22; + key + &#x22; should be &#x22; + typeof defaultValues[key];
+    }
+    if (typeof conf[key] === &#x27;number&#x27; &#x26;&#x26; isNaN(conf[key])) {
+      throw &#x22;Invalid value: &#x22; + key + &#x22; should be a number&#x22;;
+    }
+
+    if (conf.static &#x26;&#x26; conf.proxy !== &#x27;&#x27;) {
+      throw &#x27;The &#x22;static&#x22; option cannot be specified together with &#x22;proxy&#x22; option&#x27;;
+    }
+    if (conf.preferLocal &#x26;&#x26; conf.proxy === &#x27;&#x27;) {
+      throw &#x27;The &#x22;prefer-local&#x22; option must be specified with &#x22;proxy&#x22; option&#x27;;
+    }
+  }
+  return conf;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.filter" id="apidoc.module.livereloadx.filter">module livereloadx.filter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.filter.Filter" id="apidoc.element.livereloadx.filter.Filter">
+        function <span class="apidocSignatureSpan">livereloadx.filter.</span>Filter
+        <span class="apidocSignatureSpan">(filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Filter(filter) {
+  // validate type
+  if (filter.type !== &#x27;include&#x27; &#x26;&#x26; filter.type !== &#x27;exclude&#x27;) {
+    throw new Error(&#x27;Invalid filter type: &#x27; + filter.type);
+  }
+
+  this.pattern = filter.pattern;
+  this.type = filter.type;
+  this.is_include = (filter.type === &#x27;include&#x27;);
+  this.is_exclude = !this.is_include;
+  this.parse();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.filter.getMatcher" id="apidoc.element.livereloadx.filter.getMatcher">
+        function <span class="apidocSignatureSpan">livereloadx.filter.</span>getMatcher
+        <span class="apidocSignatureSpan">(filters)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getMatcher(filters) {
+  filters = filters.map(function(f) { return new Filter(f); });
+
+  return function match(file) {
+    var dirs = file.split(&#x27;/&#x27;);
+    log.trace(&#x27;%s: filtering start&#x27;, file);
+    for (var i = 0, len = dirs.length; i &#x3c; len; i++) {
+      var name = dirs.slice(0, i + 1).join(&#x27;/&#x27;)
+        , is_dir = (i &#x3c; len - 1);
+
+      for (var j = 0, filterLen = filters.length; j &#x3c; filterLen; j++) {
+        if (filters[j].match(name, is_dir)) {
+          if (filters[j].is_include) {
+            log.trace(&#x27;%s: include filter %d matches (%s)&#x27;, name, j, filters[j].re.source);
+            break;
+          } else {
+            log.trace(&#x27;%s: exclude filter %d matches (%s)&#x27;, name, j, filters[j].re.source);
+            return false;
+          }
+        }
+      }
+      if (j === filterLen) {
+        log.trace(&#x27;%s: no filter matches&#x27;, name);
+      }
+    }
+    log.trace(&#x27;%s: included&#x27;, file);
+    return true;
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    res._headers &#x26;&#x26; res._headers[&#x27;content-length&#x27;] || &#x27;-&#x27;);
+};
+}
+
+
+function Server(config, watcher) {
+this.config = require(&#x27;./config&#x27;).setDefaultValue(config);
+this.is_included = require(&#x27;./filter&#x27;).<span class="apidocCodeKeywordSpan">getMatcher</span>(this.config.filter);
+this.watcher = watcher || new Watcher();
+}
+
+Server.prototype = {
+listen: function() {
+  var self = this;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.html" id="apidoc.module.livereloadx.html">module livereloadx.html</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.html.inject" id="apidoc.element.livereloadx.html.inject">
+        function <span class="apidocSignatureSpan">livereloadx.html.</span>inject
+        <span class="apidocSignatureSpan">(buffer, port)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">inject = function (buffer, port) {
+  // create snippet code
+  var snippet = &#x22;&#x3c;script&#x3e;document.write(&#x27;&#x3c;script src=\&#x22;http://&#x27; + (location.host || &#x27;localhost&#x27;).split(&#x27;:&#x27;)[0] + &#x27;:&#x22; +
+      port + &#x22;/livereload.js?snipver=2&#x26;port=&#x22; + port + &#x22;\&#x22;&#x3e;&#x3c;/&#x27; + &#x27;script&#x3e;&#x27;)&#x3c;/script&#x3e;&#x22;;
+
+  // find embed position
+  var pos = bufLastSearchBody(buffer);
+
+  var ret = new Buffer(buffer.length + snippet.length);
+  if (pos &#x3e;= 0) {
+    log.debug(&#x27;insert snippet at %d&#x27;, pos);
+    buffer.copy(ret, 0, 0, pos);
+    ret.write(snippet, pos);
+    buffer.copy(ret, pos + snippet.length, pos);
+  } else {
+    log.debug(&#x27;append snippet&#x27;);
+    buffer.copy(ret);
+    ret.write(snippet, buffer.length);
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.livereloadx" id="apidoc.module.livereloadx.livereloadx">module livereloadx.livereloadx</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.livereloadx.livereloadx" id="apidoc.element.livereloadx.livereloadx.livereloadx">
+        function <span class="apidocSignatureSpan">livereloadx.</span>livereloadx
+        <span class="apidocSignatureSpan">(grunt)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">livereloadx = function (grunt) {
+
+  grunt.registerTask(&#x27;livereloadx&#x27;, &#x27;LiveReloadX server&#x27;, function() {
+    // initialize log
+    var log_mod = require(&#x27;../lib/log&#x27;)
+      , config_mod = require(&#x27;../lib/config&#x27;);
+    log_mod.cli = true;
+    if (grunt.option(&#x27;debug&#x27;) || grunt.option(&#x27;verbose&#x27;)) {
+      log_mod.verbose = true;
+    }
+
+    // initialize wait
+    var config = grunt.config(this.name);
+    if (&#x27;wait&#x27; in config) {
+      if (config[&#x27;wait&#x27;]) {
+        // never go to next task
+        this.async();
+      }
+      // delete wait property because config_mod report it as invalid
+      delete config[&#x27;wait&#x27;];
+    }
+
+    // get config
+    var log = log_mod(&#x27;grunt&#x27;);
+    try {
+      config = config_mod.setDefaultValue(config);
+      config_mod.dump(log.info.bind(log), config);
+    } catch (e) {
+      grunt.log.error(e);
+      return false;
+    }
+
+    // start server
+    var server = require(&#x27;../&#x27;)(config);
+    server.listen().watch();
+    grunt.log.writeln(&#x27;LiveReloadX started.&#x27;);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.proxy" id="apidoc.module.livereloadx.proxy">module livereloadx.proxy</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.proxy.proxy" id="apidoc.element.livereloadx.proxy.proxy">
+        function <span class="apidocSignatureSpan">livereloadx.</span>proxy
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ProxyHandler(config) {
+  this.config = config;
+  this.init();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.proxy.prototype" id="apidoc.module.livereloadx.proxy.prototype">module livereloadx.proxy.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.proxy.prototype.doProxy" id="apidoc.element.livereloadx.proxy.prototype.doProxy">
+        function <span class="apidocSignatureSpan">livereloadx.proxy.prototype.</span>doProxy
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">doProxy = function (req, res) {
+  // rewrite location header
+  wrapRewriteLocation(req, res, this.proxy);
+
+  // hook response
+  wrapResponse(req, res, this.config.port);
+
+  // pass to http-proxy
+  log.debug(&#x22;process: %s&#x22;, req.url);
+  this.proxy.proxyRequest(req, res);
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (this.staticHandler) {
+  if (this.staticHandler.handle(req, res)) {
+    return true;
+  }
+}
+
+this.<span class="apidocCodeKeywordSpan">doProxy</span>(req, res);
+return true;
+};
+
+ProxyHandler.prototype.doProxy = function(req, res) {
+// rewrite location header
+wrapRewriteLocation(req, res, this.proxy);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.proxy.prototype.handle" id="apidoc.element.livereloadx.proxy.prototype.handle">
+        function <span class="apidocSignatureSpan">livereloadx.proxy.prototype.</span>handle
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handle = function (req, res) {
+  if (!this.proxy) {
+    return false;
+  }
+
+  if (this.staticHandler) {
+    if (this.staticHandler.handle(req, res)) {
+      return true;
+    }
+  }
+
+  this.doProxy(req, res);
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ProxyHandler.prototype.handle = function(req, res) {
+  if (!this.proxy) {
+    return false;
+  }
+
+  if (this.staticHandler) {
+    if (this.staticHandler.<span class="apidocCodeKeywordSpan">handle</span>(req, res)) {
+      return true;
+    }
+  }
+
+  this.doProxy(req, res);
+  return true;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.proxy.prototype.init" id="apidoc.element.livereloadx.proxy.prototype.init">
+        function <span class="apidocSignatureSpan">livereloadx.proxy.prototype.</span>init
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function () {
+  log.debug(&#x27;proxy: &#x27;, this.config.proxy);
+  if (this.config.proxy === &#x27;&#x27;) {
+    return;
+  }
+
+  var proxyUrl = url.parse(this.config.proxy);
+  if (!proxyUrl.protocol) {
+    throw new Error(&#x22;proxy URL protocol is not specified:&#x22; + this.config.proxy);
+  }
+
+  // create HttpProxy instance
+  var isHttps = (proxyUrl.protocol === &#x27;https:&#x27;);
+  var port = proxyUrl.port || (isHttps ? 443 : 80);
+  if (!isHttps &#x26;&#x26; proxyUrl.protocol !== &#x27;http:&#x27;) {
+    throw new Error(&#x22;proxy URL protocol is invalid: &#x22; + this.config.proxy);
+  }
+  if (proxyUrl.path !== &#x27;/&#x27;) {
+    log.warn(&#x22;proxy URL path &#x27;%s&#x27; is ignored&#x22;, proxyUrl.path);
+  }
+  this.proxy = new httpProxy.HttpProxy({
+    target: {
+      host: proxyUrl.hostname,
+      port: port,
+      https: isHttps
+    },
+    enable: {
+      xforward: false
+    },
+    changeOrigin: true
+  });
+
+  // create StaticHandler instance if prefer-local is enabled
+  if (this.config.preferLocal) {
+    this.staticHandler = new StaticHandler(this.config, this.onError.bind(this));
+  }
+
+  log.info(&#x22;Enabled proxy mode. (proxy to &#x27;%s//%s:%d/&#x27;)&#x22;, proxyUrl.protocol,
+    proxyUrl.hostname, port);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  }
+  return writeHead.call(this, statusCode, headers);
+};
+}
+
+function ProxyHandler(config) {
+this.config = config;
+this.<span class="apidocCodeKeywordSpan">init</span>();
+}
+
+ProxyHandler.prototype.init = function() {
+log.debug(&#x27;proxy: &#x27;, this.config.proxy);
+if (this.config.proxy === &#x27;&#x27;) {
+  return;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.proxy.prototype.onError" id="apidoc.element.livereloadx.proxy.prototype.onError">
+        function <span class="apidocSignatureSpan">livereloadx.proxy.prototype.</span>onError
+        <span class="apidocSignatureSpan">(req, res, err)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onError = function (req, res, err) {
+  if (err.status === 404) {
+    // If file not found on local dir, retrieve from remote server
+    log.debug(&#x22;%s: not found on local. load from remote.&#x22;, req.url);
+    this.doProxy(req, res);
+  } else {
+    // unknown error
+    // (ref) connect/lib/proto.js
+
+    // default to 500
+    if (res.statusCode &#x3c; 400) { res.statusCode = 500; }
+
+    // respect err.status
+    if (err.status) { res.statusCode = err.status; }
+
+    // gets a basic error message
+    var msg = err.stack || err.toString();
+    log.error(&#x27;Failed to read from local: %s, %s&#x27;, this.req.url, msg);
+
+    if (res.headerSent) { return req.socket.destroy(); }
+    res.setHeader(&#x27;Content-Type&#x27;, &#x27;text/plain&#x27;);
+    res.setHeader(&#x27;Content-Length&#x27;, Buffer.byteLength(msg));
+    if (&#x27;HEAD&#x27; === req.method) { return res.end(); }
+    res.end(msg);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    self.sendWithInjection(path, stat, this);
+  };
+}
+
+// Set error callback
+if (this.onError) {
+  sendStream.on(&#x27;error&#x27;, function(err) {
+    self.<span class="apidocCodeKeywordSpan">onError</span>(req, res, err);
+
+    // replay end &#x26; data events
+    // (ref) connect/lib/middlewares/static.js
+    //       https://gist.github.com/mikedeboer/3047099
+    _pause.resume();
+  });
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.server" id="apidoc.module.livereloadx.server">module livereloadx.server</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.server.LiveReloadJsHandler" id="apidoc.element.livereloadx.server.LiveReloadJsHandler">
+        function <span class="apidocSignatureSpan">livereloadx.server.</span>LiveReloadJsHandler
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function LiveReloadJsHandler() {
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.server.Server" id="apidoc.element.livereloadx.server.Server">
+        function <span class="apidocSignatureSpan">livereloadx.server.</span>Server
+        <span class="apidocSignatureSpan">(config, watcher)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Server(config, watcher) {
+  this.config = require(&#x27;./config&#x27;).setDefaultValue(config);
+  this.is_included = require(&#x27;./filter&#x27;).getMatcher(this.config.filter);
+  this.watcher = watcher || new Watcher();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.server.createServer" id="apidoc.element.livereloadx.server.createServer">
+        function <span class="apidocSignatureSpan">livereloadx.server.</span>createServer
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createServer = function (config) {
+  log.debug(&#x22;createServer&#x22;, config);
+  var server = new Server(config || {});
+  return server;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var handlers = [ new LiveReloadJsHandler() ];
+    if (this.config.proxy) {
+handlers.push(new ProxyHandler(this.config));
+    } else if (this.config.static) {
+handlers.push(new StaticHandler(this.config));
+    }
+
+    var server = http.<span class="apidocCodeKeywordSpan">createServer</span>(function(request, response) {
+addLogger(request, response);
+
+for (var i = 0; i &#x3c; handlers.length; i++) {
+  if (handlers[i].handle(request, response)) {
+    return;
+  }
+}
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.static" id="apidoc.module.livereloadx.static">module livereloadx.static</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.static.static" id="apidoc.element.livereloadx.static.static">
+        function <span class="apidocSignatureSpan">livereloadx.</span>static
+        <span class="apidocSignatureSpan">(config, onError)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function StaticHandler(config, onError) {
+  this.config = config;
+  this.onError = onError;
+  this.root = require(&#x27;path&#x27;).resolve(this.config.dir);
+
+  if (this.config.static) {
+    log.info(&#x22;Enabled static mode.&#x22;);
+  }
+  log.debug(&#x27;root dir: %s&#x27;, this.root);
+
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.static.super_" id="apidoc.element.livereloadx.static.super_">
+        function <span class="apidocSignatureSpan">livereloadx.static.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.static.prototype" id="apidoc.module.livereloadx.static.prototype">module livereloadx.static.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.static.prototype.handle" id="apidoc.element.livereloadx.static.prototype.handle">
+        function <span class="apidocSignatureSpan">livereloadx.static.prototype.</span>handle
+        <span class="apidocSignatureSpan">(req, res)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handle = function (req, res) {
+  if (&#x27;GET&#x27; !== req.method &#x26;&#x26; &#x27;HEAD&#x27; !== req.method) { return false; }
+
+  var path = url.parse(req.url).pathname;
+  var _pause = pause(req);
+  var self = this;
+
+  log.debug(&#x27;path: %s&#x27;, path);
+  var sendStream = send(req, path, {root: this.root});
+
+  if (path.match(/(\/|\.html?)$/)) {
+    // hook SendStream.send()
+    sendStream.send = function(path, stat) {
+      // HTML -&#x3e; call sendWithInjection()
+      self.sendWithInjection(path, stat, this);
+    };
+  }
+
+  // Set error callback
+  if (this.onError) {
+    sendStream.on(&#x27;error&#x27;, function(err) {
+      self.onError(req, res, err);
+
+      // replay end &#x26; data events
+      // (ref) connect/lib/middlewares/static.js
+      //       https://gist.github.com/mikedeboer/3047099
+      _pause.resume();
+    });
+  }
+
+  sendStream
+    .on(&#x27;end&#x27;, function() { log.debug(&#x27;end&#x27;); self.emit(&#x27;end&#x27;); })
+    .pipe(res);
+  return true;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+ProxyHandler.prototype.handle = function(req, res) {
+  if (!this.proxy) {
+    return false;
+  }
+
+  if (this.staticHandler) {
+    if (this.staticHandler.<span class="apidocCodeKeywordSpan">handle</span>(req, res)) {
+      return true;
+    }
+  }
+
+  this.doProxy(req, res);
+  return true;
+};
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.static.prototype.sendWithInjection" id="apidoc.element.livereloadx.static.prototype.sendWithInjection">
+        function <span class="apidocSignatureSpan">livereloadx.static.prototype.</span>sendWithInjection
+        <span class="apidocSignatureSpan">(path, stat, stream)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendWithInjection = function (path, stat, stream) {
+  // read file to end
+  var self = this;
+  fs.readFile(path, function(err, data) {
+    if (err) {
+      stream.error(500, err);
+      return;
+    }
+
+    // set header
+    stream.setHeader(path, stat);
+    stream.res.setHeader(&#x27;Content-Type&#x27;, &#x27;text/html&#x27;);
+
+    // inject snippet
+    var buffer = inject(data, self.config.port);
+
+    // write to stream
+    stream.res.setHeader(&#x27;Content-Length&#x27;, buffer.length);
+    stream.res.write(buffer);
+    stream.res.end();
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+log.debug(&#x27;path: %s&#x27;, path);
+var sendStream = send(req, path, {root: this.root});
+
+if (path.match(/(\/|\.html?)$/)) {
+  // hook SendStream.send()
+  sendStream.send = function(path, stat) {
+    // HTML -&#x3e; call sendWithInjection()
+    self.<span class="apidocCodeKeywordSpan">sendWithInjection</span>(path, stat, this);
+  };
+}
+
+// Set error callback
+if (this.onError) {
+  sendStream.on(&#x27;error&#x27;, function(err) {
+    self.onError(req, res, err);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.toString" id="apidoc.module.livereloadx.toString">module livereloadx.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.toString.toString" id="apidoc.element.livereloadx.toString.toString">
+        function <span class="apidocSignatureSpan">livereloadx.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  oldBuf.length, newBuf.length);
+return newBuf;
+};
+
+ServerResponseWrapper.prototype.finish = function(buffer) {
+// set Content-Length header
+// `res.setHeader()` is necessary for logging Content-Length in server.js
+this.headers[&#x27;content-length&#x27;] = buffer.length.<span class="apidocCodeKeywordSpan">toString</span>();
+this.res.setHeader(&#x27;Content-Length&#x27;, buffer.length.toString());
+
+log.debug(&#x27;%s: finish&#x27;, this.req.url);
+log.debug(&#x27;  - header: &#x27;, this.headers);
+this.origWriteHead.call(this.res, this.statusCode, this.headers);
+this.origWrite.call(this.res, buffer);
+this.origEnd.call(this.res);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.watcher" id="apidoc.module.livereloadx.watcher">module livereloadx.watcher</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.watcher.watcher" id="apidoc.element.livereloadx.watcher.watcher">
+        function <span class="apidocSignatureSpan">livereloadx.</span>watcher
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Watcher() {
+  EventEmitter.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.watcher.super_" id="apidoc.element.livereloadx.watcher.super_">
+        function <span class="apidocSignatureSpan">livereloadx.watcher.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.watcher.prototype" id="apidoc.module.livereloadx.watcher.prototype">module livereloadx.watcher.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.watcher.prototype.watch" id="apidoc.element.livereloadx.watcher.prototype.watch">
+        function <span class="apidocSignatureSpan">livereloadx.watcher.prototype.</span>watch
+        <span class="apidocSignatureSpan">(dir, is_included)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">watch = function (dir, is_included) {
+  var self = this;
+
+  var filter = {
+    matches: function() { return true; },
+    excludes: function(path) {
+      path = path.replace(/\\/g, &#x27;/&#x27;) + &#x27;/&#x27;;
+      if (is_included(path)) {
+        log.debug(&#x22;  watching &#x27;%s&#x27;&#x22;, path);
+        return false;
+      } else {
+        log.debug(&#x22;  skipping &#x27;%s&#x27;&#x22;, path);
+        return true;
+      }
+    }
+  };
+
+  var watcher = fsmonitor.watch(dir, filter, function(change) {
+    log.debug(&#x22;Change %s&#x22;, change);
+    change.modifiedFiles.concat(change.addedFiles).forEach(function(file) {
+      self.emit(&#x22;change&#x22;, file.replace(/\\/g, &#x27;/&#x27;));
+    });
+  });
+
+  log.info(&#x27;Watching &#x22;%s&#x22;...&#x27;, require(&#x27;path&#x27;).resolve(dir));
+  return watcher;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+if (this.webSocket) {
+  this.webSocket.send(file, msg);
+}
+  },
+
+  watch: function() {
+this.watcher.<span class="apidocCodeKeywordSpan">watch</span>(this.config.dir, this.is_included);
+
+var self = this;
+this.watcher.on(&#x27;change&#x27;, function(file) {
+  if (self.is_included(file)) {
+    if (self.config.delay === 0) {
+      self.notifyFileChange(file);
+    } else {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.websocket" id="apidoc.module.livereloadx.websocket">module livereloadx.websocket</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.websocket.websocket" id="apidoc.element.livereloadx.websocket.websocket">
+        function <span class="apidocSignatureSpan">livereloadx.</span>websocket
+        <span class="apidocSignatureSpan">(config, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function WebSocketHandler(config, options) {
+  this.config = config;
+  this.clients = [];
+
+  this.wsServer = new WebSocketServer(options);
+  this.wsServer.on(&#x27;connection&#x27;, this.onConnection.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.websocket.prototype" id="apidoc.module.livereloadx.websocket.prototype">module livereloadx.websocket.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.websocket.prototype.close" id="apidoc.element.livereloadx.websocket.prototype.close">
+        function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>close
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">close = function () {
+  this.wsServer.close();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.clients.length &#x3e; 2 ? &#x27;s&#x27; : &#x27;&#x27;);
+  this.clients.forEach(function(socket) {
+    socket.send(msg);
+  });
+},
+
+close: function() {
+  this.wsServer.<span class="apidocCodeKeywordSpan">close</span>();
+},
+
+onConnection: function(socket) {
+  log.debug(&#x22;on connection&#x22;);
+  var remoteAddress = &#x22;(unknown)&#x22;;
+  var self = this;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.websocket.prototype.onClose" id="apidoc.element.livereloadx.websocket.prototype.onClose">
+        function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>onClose
+        <span class="apidocSignatureSpan">(socket, remoteAddress)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onClose = function (socket, remoteAddress) {
+  log.debug(&#x22;on close&#x22;);
+  log.info(&#x22;%s - websocket connection closed&#x22;, remoteAddress);
+
+  var i = this.clients.indexOf(socket);
+  if (i &#x3e;= 0) {
+    this.clients.splice(i, 1);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  this.clients.push(socket);
+
+  socket.on(&#x27;message&#x27;, function(message) {
+    self.onMessage(socket, message);
+  });
+  socket.on(&#x27;close&#x27;, function() {
+    self.<span class="apidocCodeKeywordSpan">onClose</span>(socket, remoteAddress);
+  });
+},
+
+onMessage: function(socket, message) {
+  log.debug(&#x22;on message: %s&#x22;, message);
+  var msg = JSON.parse(message);
+  if (msg.command === &#x27;hello&#x27;) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.websocket.prototype.onConnection" id="apidoc.element.livereloadx.websocket.prototype.onConnection">
+        function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>onConnection
+        <span class="apidocSignatureSpan">(socket)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onConnection = function (socket) {
+  log.debug(&#x22;on connection&#x22;);
+  var remoteAddress = &#x22;(unknown)&#x22;;
+  var self = this;
+
+  if (socket._socket) {
+    remoteAddress = socket._socket.remoteAddress;
+  }
+  log.info(&#x22;%s - new connection to websocket server&#x22;, remoteAddress);
+
+  this.clients.push(socket);
+
+  socket.on(&#x27;message&#x27;, function(message) {
+    self.onMessage(socket, message);
+  });
+  socket.on(&#x27;close&#x27;, function() {
+    self.onClose(socket, remoteAddress);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.websocket.prototype.onMessage" id="apidoc.element.livereloadx.websocket.prototype.onMessage">
+        function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>onMessage
+        <span class="apidocSignatureSpan">(socket, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onMessage = function (socket, message) {
+  log.debug(&#x22;on message: %s&#x22;, message);
+  var msg = JSON.parse(message);
+  if (msg.command === &#x27;hello&#x27;) {
+    socket.send(JSON.stringify({
+      command: &#x27;hello&#x27;,
+      protocols: [
+        &#x27;http://livereload.com/protocols/official-7&#x27;
+      ],
+      serverName: &#x27;livereloadx&#x27;
+    }));
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    remoteAddress = socket._socket.remoteAddress;
+  }
+  log.info(&#x22;%s - new connection to websocket server&#x22;, remoteAddress);
+
+  this.clients.push(socket);
+
+  socket.on(&#x27;message&#x27;, function(message) {
+    self.<span class="apidocCodeKeywordSpan">onMessage</span>(socket, message);
+  });
+  socket.on(&#x27;close&#x27;, function() {
+    self.onClose(socket, remoteAddress);
+  });
+},
+
+onMessage: function(socket, message) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.websocket.prototype.send" id="apidoc.element.livereloadx.websocket.prototype.send">
+        function <span class="apidocSignatureSpan">livereloadx.websocket.prototype.</span>send
+        <span class="apidocSignatureSpan">(file, msg)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">send = function (file, msg) {
+  log.info(&#x22;notify: %s (%d client)&#x22;, file, this.clients.length,
+    this.clients.length &#x3e; 2 ? &#x27;s&#x27; : &#x27;&#x27;);
+  this.clients.forEach(function(socket) {
+    socket.send(msg);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  command: &#x27;reload&#x27;,
+  path: file,
+  liveCSS: this.config.liveCSS,
+  liveImg: this.config.liveImg
+});
+
+if (this.webSocket) {
+  this.webSocket.<span class="apidocCodeKeywordSpan">send</span>(file, msg);
+}
+  },
+
+  watch: function() {
+this.watcher.watch(this.config.dir, this.is_included);
+
+var self = this;
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
