@@ -1,4 +1,7 @@
-# api documentation for  [livereloadx (v0.3.9)](https://github.com/nitoyon/livereloadx#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-livereloadx.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-livereloadx) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-livereloadx.svg)](https://travis-ci.org/npmdoc/node-npmdoc-livereloadx)
+# npmdoc-livereloadx
+
+#### basic api documentation for  [livereloadx (v0.3.9)](https://github.com/nitoyon/livereloadx#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-livereloadx.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-livereloadx) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-livereloadx.svg)](https://travis-ci.org/npmdoc/node-npmdoc-livereloadx)
+
 #### An implementation of the LiveReload 2 server in Node.js
 
 [![NPM](https://nodei.co/npm/livereloadx.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/livereloadx)
