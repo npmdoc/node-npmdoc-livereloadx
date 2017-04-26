@@ -65,7 +65,7 @@
 
             <a class="apidocElementLiA" href="#apidoc.element.livereloadx.livereloadx">
             function <span class="apidocSignatureSpan"></span>livereloadx
-            <span class="apidocSignatureSpan">(grunt)</span>
+            <span class="apidocSignatureSpan">(config)</span>
             </a>
 
         </li>
@@ -90,15 +90,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.toString">
-            function <span class="apidocSignatureSpan">livereloadx.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <a class="apidocElementLiA" href="#apidoc.element.livereloadx.watcher">
             function <span class="apidocSignatureSpan">livereloadx.</span>watcher
             <span class="apidocSignatureSpan">()</span>
@@ -112,6 +103,12 @@
             function <span class="apidocSignatureSpan">livereloadx.</span>websocket
             <span class="apidocSignatureSpan">(config, options)</span>
             </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>cli</span>
 
         </li>
 
@@ -160,6 +157,19 @@
         <li>
 
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">livereloadx.</span>websocket.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.cli">module livereloadx.cli</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.cli.run">
+            function <span class="apidocSignatureSpan">livereloadx.cli.</span>run
+            <span class="apidocSignatureSpan">()</span>
+            </a>
 
         </li>
 
@@ -234,19 +244,6 @@
             <a class="apidocElementLiA" href="#apidoc.element.livereloadx.html.inject">
             function <span class="apidocSignatureSpan">livereloadx.html.</span>inject
             <span class="apidocSignatureSpan">(buffer, port)</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
-    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.livereloadx">module livereloadx.livereloadx</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.livereloadx.livereloadx">
-            function <span class="apidocSignatureSpan">livereloadx.</span>livereloadx
-            <span class="apidocSignatureSpan">(grunt)</span>
             </a>
 
         </li>
@@ -381,19 +378,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.toString">module livereloadx.toString</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.livereloadx.toString.toString">
-            function <span class="apidocSignatureSpan">livereloadx.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-    </ol></li>
-
     <li class="apidocModuleLi"><a href="#apidoc.module.livereloadx.watcher">module livereloadx.watcher</a><ol>
 
         <li>
@@ -500,47 +484,14 @@
     <h2>
         <a href="#apidoc.element.livereloadx.livereloadx" id="apidoc.element.livereloadx.livereloadx">
         function <span class="apidocSignatureSpan"></span>livereloadx
-        <span class="apidocSignatureSpan">(grunt)</span>
+        <span class="apidocSignatureSpan">(config)</span>
         </a>
     </h2>
     <ul>
-    <li>description and source-code<pre class="apidocCodePre">livereloadx = function (grunt) {
-
-  grunt.registerTask(&#x27;livereloadx&#x27;, &#x27;LiveReloadX server&#x27;, function() {
-    // initialize log
-    var log_mod = require(&#x27;../lib/log&#x27;)
-      , config_mod = require(&#x27;../lib/config&#x27;);
-    log_mod.cli = true;
-    if (grunt.option(&#x27;debug&#x27;) || grunt.option(&#x27;verbose&#x27;)) {
-      log_mod.verbose = true;
-    }
-
-    // initialize wait
-    var config = grunt.config(this.name);
-    if (&#x27;wait&#x27; in config) {
-      if (config[&#x27;wait&#x27;]) {
-        // never go to next task
-        this.async();
-      }
-      // delete wait property because config_mod report it as invalid
-      delete config[&#x27;wait&#x27;];
-    }
-
-    // get config
-    var log = log_mod(&#x27;grunt&#x27;);
-    try {
-      config = config_mod.setDefaultValue(config);
-      config_mod.dump(log.info.bind(log), config);
-    } catch (e) {
-      grunt.log.error(e);
-      return false;
-    }
-
-    // start server
-    var server = require(&#x27;../&#x27;)(config);
-    server.listen().watch();
-    grunt.log.writeln(&#x27;LiveReloadX started.&#x27;);
-  });
+    <li>description and source-code<pre class="apidocCodePre">livereloadx = function (config) {
+  log.debug(&#x22;createServer&#x22;, config);
+  var server = new Server(config || {});
+  return server;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -583,37 +534,6 @@
   EventEmitter.call(this);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.livereloadx.toString" id="apidoc.element.livereloadx.toString">
-        function <span class="apidocSignatureSpan">livereloadx.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  oldBuf.length, newBuf.length);
-return newBuf;
-};
-
-ServerResponseWrapper.prototype.finish = function(buffer) {
-// set Content-Length header
-// `res.setHeader()` is necessary for logging Content-Length in server.js
-this.headers[&#x27;content-length&#x27;] = buffer.length.<span class="apidocCodeKeywordSpan">toString</span>();
-this.res.setHeader(&#x27;Content-Length&#x27;, buffer.length.toString());
-
-log.debug(&#x27;%s: finish&#x27;, this.req.url);
-log.debug(&#x27;  - header: &#x27;, this.headers);
-this.origWriteHead.call(this.res, this.statusCode, this.headers);
-this.origWrite.call(this.res, buffer);
-this.origEnd.call(this.res);
-...</pre></li>
     </ul>
 
 
@@ -667,6 +587,59 @@ this.origEnd.call(this.res);
 
 
 
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.livereloadx.cli" id="apidoc.module.livereloadx.cli">module livereloadx.cli</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.livereloadx.cli.run" id="apidoc.element.livereloadx.cli.run">
+        function <span class="apidocSignatureSpan">livereloadx.cli.</span>run
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">run = function () {
+  // enable CLI mode
+  require(&#x27;./log&#x27;).cli = true;
+  var log = require(&#x27;./log&#x27;)(&#x27;cli&#x27;);
+
+  // parse argv
+  var config;
+  try {
+    config = require(&#x27;./config&#x27;).parseArgv(process.argv);
+  } catch (e) {
+    log.error(e.message || e);
+    return;
+  }
+
+  // enable verbose output
+  if (config.verbose) {
+    require(&#x27;./log&#x27;).verbose = true;
+  }
+
+  // dump config
+  require(&#x27;./config&#x27;).dump(log.info.bind(log), config);
+
+  var server = require(&#x27;./server&#x27;).createServer(config);
+  server.listen().watch();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+
+
+
+
+#!/usr/bin/env node
+
+require(&#x27;../lib/cli&#x27;).<span class="apidocCodeKeywordSpan">run</span>();
+...</pre></li>
+    </ul>
+
+
 </div>
 
 <div class="apidocSectionDiv">
@@ -694,21 +667,18 @@ this.origEnd.call(this.res);
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  delete config[&#x27;wait&#x27;];
-}
 
-// get config
-var log = log_mod(&#x27;grunt&#x27;);
-try {
-  config = config_mod.setDefaultValue(config);
-  config_mod.<span class="apidocCodeKeywordSpan">dump</span>(log.info.bind(log), config);
-} catch (e) {
-  grunt.log.error(e);
-  return false;
-}
+  // enable verbose output
+  if (config.verbose) {
+    require(&#x27;./log&#x27;).verbose = true;
+  }
 
-// start server
-var server = require(&#x27;../&#x27;)(config);
+  // dump config
+  require(&#x27;./config&#x27;).<span class="apidocCodeKeywordSpan">dump</span>(log.info.bind(log), config);
+
+  var server = require(&#x27;./server&#x27;).createServer(config);
+  server.listen().watch();
+};
 ...</pre></li>
     </ul>
 
@@ -754,7 +724,23 @@ var server = require(&#x27;../&#x27;)(config);
   // copy program to Object
   return validate(copyValues({}, program));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+// enable CLI mode
+require(&#x27;./log&#x27;).cli = true;
+var log = require(&#x27;./log&#x27;)(&#x27;cli&#x27;);
+
+// parse argv
+var config;
+try {
+  config = require(&#x27;./config&#x27;).<span class="apidocCodeKeywordSpan">parseArgv</span>(process.argv);
+} catch (e) {
+  log.error(e.message || e);
+  return;
+}
+
+// enable verbose output
+if (config.verbose) {
+...</pre></li>
     </ul>
 
 
@@ -947,61 +933,6 @@ listen: function() {
   }
 
   return ret;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.livereloadx.livereloadx" id="apidoc.module.livereloadx.livereloadx">module livereloadx.livereloadx</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.livereloadx.livereloadx.livereloadx" id="apidoc.element.livereloadx.livereloadx.livereloadx">
-        function <span class="apidocSignatureSpan">livereloadx.</span>livereloadx
-        <span class="apidocSignatureSpan">(grunt)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">livereloadx = function (grunt) {
-
-  grunt.registerTask(&#x27;livereloadx&#x27;, &#x27;LiveReloadX server&#x27;, function() {
-    // initialize log
-    var log_mod = require(&#x27;../lib/log&#x27;)
-      , config_mod = require(&#x27;../lib/config&#x27;);
-    log_mod.cli = true;
-    if (grunt.option(&#x27;debug&#x27;) || grunt.option(&#x27;verbose&#x27;)) {
-      log_mod.verbose = true;
-    }
-
-    // initialize wait
-    var config = grunt.config(this.name);
-    if (&#x27;wait&#x27; in config) {
-      if (config[&#x27;wait&#x27;]) {
-        // never go to next task
-        this.async();
-      }
-      // delete wait property because config_mod report it as invalid
-      delete config[&#x27;wait&#x27;];
-    }
-
-    // get config
-    var log = log_mod(&#x27;grunt&#x27;);
-    try {
-      config = config_mod.setDefaultValue(config);
-      config_mod.dump(log.info.bind(log), config);
-    } catch (e) {
-      grunt.log.error(e);
-      return false;
-    }
-
-    // start server
-    var server = require(&#x27;../&#x27;)(config);
-    server.listen().watch();
-    grunt.log.writeln(&#x27;LiveReloadX started.&#x27;);
-  });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -1286,21 +1217,16 @@ if (this.onError) {
   return server;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    var handlers = [ new LiveReloadJsHandler() ];
-    if (this.config.proxy) {
-handlers.push(new ProxyHandler(this.config));
-    } else if (this.config.static) {
-handlers.push(new StaticHandler(this.config));
-    }
-
-    var server = http.<span class="apidocCodeKeywordSpan">createServer</span>(function(request, response) {
-addLogger(request, response);
-
-for (var i = 0; i &#x3c; handlers.length; i++) {
-  if (handlers[i].handle(request, response)) {
-    return;
+  if (config.verbose) {
+    require(&#x27;./log&#x27;).verbose = true;
   }
-}
+
+  // dump config
+  require(&#x27;./config&#x27;).dump(log.info.bind(log), config);
+
+  var server = require(&#x27;./server&#x27;).<span class="apidocCodeKeywordSpan">createServer</span>(config);
+  server.listen().watch();
+};
 ...</pre></li>
     </ul>
 
@@ -1470,40 +1396,6 @@ if (this.onError) {
 </div>
 
 <div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.livereloadx.toString" id="apidoc.module.livereloadx.toString">module livereloadx.toString</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.livereloadx.toString.toString" id="apidoc.element.livereloadx.toString.toString">
-        function <span class="apidocSignatureSpan">livereloadx.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
-    <li>example usage<pre class="apidocCodePre">...
-  oldBuf.length, newBuf.length);
-return newBuf;
-};
-
-ServerResponseWrapper.prototype.finish = function(buffer) {
-// set Content-Length header
-// `res.setHeader()` is necessary for logging Content-Length in server.js
-this.headers[&#x27;content-length&#x27;] = buffer.length.<span class="apidocCodeKeywordSpan">toString</span>();
-this.res.setHeader(&#x27;Content-Length&#x27;, buffer.length.toString());
-
-log.debug(&#x27;%s: finish&#x27;, this.req.url);
-log.debug(&#x27;  - header: &#x27;, this.headers);
-this.origWriteHead.call(this.res, this.statusCode, this.headers);
-this.origWrite.call(this.res, buffer);
-this.origEnd.call(this.res);
-...</pre></li>
-    </ul>
-
-
-</div>
-
-<div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.livereloadx.watcher" id="apidoc.module.livereloadx.watcher">module livereloadx.watcher</a></h1>
 
 
@@ -1577,21 +1469,15 @@ this.origEnd.call(this.res);
   return watcher;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
+    require(&#x27;./log&#x27;).verbose = true;
+  }
 
-if (this.webSocket) {
-  this.webSocket.send(file, msg);
-}
-  },
+  // dump config
+  require(&#x27;./config&#x27;).dump(log.info.bind(log), config);
 
-  watch: function() {
-this.watcher.<span class="apidocCodeKeywordSpan">watch</span>(this.config.dir, this.is_included);
-
-var self = this;
-this.watcher.on(&#x27;change&#x27;, function(file) {
-  if (self.is_included(file)) {
-    if (self.config.delay === 0) {
-      self.notifyFileChange(file);
-    } else {
+  var server = require(&#x27;./server&#x27;).createServer(config);
+  server.listen().<span class="apidocCodeKeywordSpan">watch</span>();
+};
 ...</pre></li>
     </ul>
 
@@ -1637,20 +1523,21 @@ this.watcher.on(&#x27;change&#x27;, function(file) {
   this.wsServer.close();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-    this.clients.length &#x3e; 2 ? &#x27;s&#x27; : &#x27;&#x27;);
-  this.clients.forEach(function(socket) {
-    socket.send(msg);
-  });
-},
-
-close: function() {
-  this.wsServer.<span class="apidocCodeKeywordSpan">close</span>();
-},
-
-onConnection: function(socket) {
-  log.debug(&#x22;on connection&#x22;);
-  var remoteAddress = &#x22;(unknown)&#x22;;
-  var self = this;
+  }
+});
+this._handshakeTimeout = new Timer(function() {
+  if (!_this._isSocketConnected()) {
+    return;
+  }
+  _this._disconnectionReason = &#x27;handshake-timeout&#x27;;
+  return _this.socket.<span class="apidocCodeKeywordSpan">close</span>();
+});
+this._reconnectTimer = new Timer(function() {
+  if (!_this._connectionDesired) {
+    return;
+  }
+  return _this.connect();
+});
 ...</pre></li>
     </ul>
 
@@ -1780,21 +1667,21 @@ onMessage: function(socket, message) {
   });
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-  command: &#x27;reload&#x27;,
-  path: file,
-  liveCSS: this.config.liveCSS,
-  liveImg: this.config.liveImg
-});
+  if (this.protocol == null) {
+    return;
+  }
+  return this._sendCommand(command);
+};
 
-if (this.webSocket) {
-  this.webSocket.<span class="apidocCodeKeywordSpan">send</span>(file, msg);
-}
-  },
+Connector.prototype._sendCommand = function(command) {
+  return this.socket.<span class="apidocCodeKeywordSpan">send</span>(JSON.stringify(command));
+};
 
-  watch: function() {
-this.watcher.watch(this.config.dir, this.is_included);
-
-var self = this;
+Connector.prototype._closeOnError = function() {
+  this._handshakeTimeout.stop();
+  this._disconnectionReason = &#x27;error&#x27;;
+  return this.socket.close();
+};
 ...</pre></li>
     </ul>
 
